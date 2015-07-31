@@ -9,17 +9,16 @@ the intended workflow is planned to be based on 3 basic functions.
  3) Kill layouts (C-c C-l C-k)
 
 ** Create new layout
-Before doing anything, you should create a new layout, this will be the layout
-that you'll be working in. When you have done this, you'll enabled the rest of
-the mode.
+When loading the mode, it will start in the layout named "default", this will be
+your default layout. Then you have the ability to create new layouts to switch
+between.
 
 ** Switch between layouts
-Only works if you stand in a layout. This feature will save the current layout
-and then switch to the decided one.
+Used to switch between layouts.
 
 ** Kill layouts
 Kill the current layout, jump to next layout in list, if no next layout exist,
-set current-layout to nil and jump to a fullscreen *scratch* buffer.
+set current-layout to "default" and jump to a fullscreen *scratch* buffer.
 
 
 * Links

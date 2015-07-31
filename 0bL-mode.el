@@ -2,8 +2,9 @@
 
 (defvar 0bL-layout-alist ()
   "List of the currently defined layouts.")
-(defvar 0bL-current-layout nil
+(defvar 0bL-current-layout "default"
   "Currently active layout")
+; (setq 0bL-current-layout nil)
 
 
 
@@ -14,17 +15,15 @@
   "0bLayout creating function, default keybind for this function is C-c C-l C-c"
   (interactive "sEnter name of new layout: ")
 
-  (unless (string= 0bL-current-layout 'nil)
-    ;; If we visit a layout at the moment, we should save the state the layout
-    ;; currently has before proceeding.
-    (0bL-save-layout layout-name))
+  ;; Save the currently active layout
+  (0bL-save-layout)
 
   ;; Then we just delete all other windows and switch to a *scratch* buffer,
   ;; then it's up to the user to set up their layout.
   (delete-other-windows)
   (find-file "*scratch*")
 
-  ;; Save the name of the current layout
+  ;; Save the name of the new current layout
   (setq 0bL-current-layout layout-name))
 
 
@@ -54,10 +53,10 @@
 ;;;
 ;;; Function to save layout
 ;;;
-(defun 0bL-save-layout (layout-name)
+(defun 0bL-save-layout ()
   "This is a helper function to save the current layout."
 
-  (message "TODO: Save the layout: %s" layout-name))
+  (message "TODO: Save the currently active layout: %s" 0bL-current-layout))
 
 
 
