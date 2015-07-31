@@ -1,0 +1,26 @@
+
+* 0bL(ayout)-mode
+
+The plan with this mode is to create a different workflow when handling layouts,
+the intended workflow is planned to be based on 3 basic functions.
+
+ 1) Create new layout (C-c C-l C-c)
+ 2) Switch between layouts (C-c C-l C-b)
+ 3) Kill layouts (C-c C-l C-k)
+
+** Create new layout
+Before doing anything, you should create a new layout, this will be the layout
+that you'll be working in. When you have done this, you'll enabled the rest of
+the mode.
+
+** Switch between layouts
+Only works if you stand in a layout. This feature will save the current layout
+and then switch to the decided one.
+
+** Kill layouts
+Kill the current layout, jump to next layout in list, if no next layout exist,
+set current-layout to nil and jump to a fullscreen *scratch* buffer.
+
+
+* Links
+May be worth looking at this: http://www.emacswiki.org/emacs/layout-restore.el
