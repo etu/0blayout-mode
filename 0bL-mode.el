@@ -1,4 +1,4 @@
-;;; 0bL-mode.el --- Layoun grouping with ease
+;;; 0bL-mode.el --- Layout grouping with ease
 
 (defvar 0bL-layout-alist ()
   "List of the currently defined layouts.")
