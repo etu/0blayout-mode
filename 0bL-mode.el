@@ -4,7 +4,6 @@
   "List of the currently defined layouts.")
 (defvar 0bL-current-layout "default"
   "Currently active layout")
-; (setq 0bL-current-layout nil)
 
 
 
