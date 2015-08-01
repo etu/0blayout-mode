@@ -36,7 +36,8 @@
 
   (message "Blasting %s now" 0bL-current-layout)
 
-  (setq 0bL-layout-alist (assq-delete-all 0bL-current-layout 0bL-layout-alist))
+  (setq 0bL-layout-alist
+        (assq-delete-all (intern 0bL-current-layout) 0bL-layout-alist))
 
   (let ((new-layout (car (car 0bL-layout-alist))))
     (set-window-configuration (cdr (car 0bL-layout-alist)))
