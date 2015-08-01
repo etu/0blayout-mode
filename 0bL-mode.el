@@ -55,7 +55,10 @@
 (defun 0bL-save-layout ()
   "This is a helper function to save the current layout."
 
-  (message "TODO: Save the currently active layout: %s" 0bL-current-layout))
+  (add-to-list '0bL-layout-alist
+               (cons 0bL-current-layout (current-window-configuration)))
+
+  (message "Saved the currently active layout: %s" 0bL-current-layout))
 
 
 
