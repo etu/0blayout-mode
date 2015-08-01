@@ -34,7 +34,13 @@
   "0bLayout removal function, default keybind for this function is C-c C-l C-k"
   (interactive)
 
-  (message "My mission is to kill %s with fire" 0bL-current-layout))
+  (message "Blasting %s now" 0bL-current-layout)
+
+  (setq 0bL-layout-alist (assq-delete-all 0bL-current-layout 0bL-layout-alist))
+
+  (let ((new-layout (car (car 0bL-layout-alist))))
+    (set-window-configuration (cdr (car 0bL-layout-alist)))
+    (setq 0bL-current-layout new-layout)))
 
 
 
