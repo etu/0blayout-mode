@@ -54,11 +54,15 @@
   ;; Save the currently active layout
   (0bL-save-layout)
 
-  ;; Load window configuration
-  (set-window-configuration (cdr (assoc layout-name 0bL-layout-alist)))
+  (let ((layout (assoc 0bL-current-layout 0bL-layout-alist)))
+    (unless (eq layout nil)
+      (progn
+        ;; Load window configuration
+        (set-window-configuration (cdr layout))
 
-  ;; Save the name of the currently active layout
-  (setq 0bL-current-layout layout-name))
+        ;; Save the name of the currently active layout
+        (setq 0bL-current-layout layout-name))
+      (message "No layout with name: '%s' is defined" layout-name))))
 
 
 
