@@ -54,7 +54,7 @@
   ;; Save the currently active layout
   (0bL-save-layout)
 
-  (let ((layout (assoc layout-name 0bL-layout-alist)))
+  (let ((layout (assoc (intern layout-name) 0bL-layout-alist)))
     (if (eq layout nil)
         (message "No layout with name: '%s' is defined" layout-name)
       (progn
