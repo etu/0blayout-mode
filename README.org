@@ -1,27 +1,21 @@
-* 0bL(ayout)-mode
+* 0bl-mode
 
-The plan with this mode is to create a different workflow when handling layouts,
-the intended workflow is planned to be based on 3 basic functions.
+This mode provides the ability to have several layouts saved and then you can
+easily switch between your saved layouts. When you first load the mode, you will
+get a "default" layout named "default".
+
+Then you have the ability to create new layouts ~C-c C-l C-c~ and name them.
+There you can set up your layout as you want it, open buffers, do stuff.
+
+And when you have more than one layout, you can switch between the layouts you
+have active with ~C-c C-l C-b~.
+
+You can also kill the layout that you're currently visiting with ~C-c C-l C-k~.
 
 *Note:* I'm sorry for my bad elisp. I don't think it's that bad, but this is
 basicly the first thing I've ever built in elisp more than my .emacs-file, which
 depends alot on stackoverflow and other sources on internet.
 
- 1) Create new layout (C-c C-l C-c)
- 2) Switch between layouts (C-c C-l C-b)
- 3) Kill layouts (C-c C-l C-k)
-
-** Create new layout
-When loading the mode, it will start in the layout named "default", this will be
-your default layout. Then you have the ability to create new layouts to switch
-between.
-
-** Switch between layouts
-Used to switch between layouts.
-
-** Kill layouts
-Kill the current layout, jump to next layout in list, if no next layout exist,
-set current-layout to "default" and jump to a fullscreen *scratch* buffer.
-
-* Links
-May be worth looking at this: http://www.emacswiki.org/emacs/layout-restore.el
+** Why the name?
+0b is just a prefix I use for things because I have the domain 0b.se, and
+lowercase L as in "Layout", that's it basicly.
