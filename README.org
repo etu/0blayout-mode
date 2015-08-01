@@ -3,7 +3,7 @@
 The plan with this mode is to create a different workflow when handling layouts,
 the intended workflow is planned to be based on 3 basic functions.
 
-*Note: * I'm sorry for my bad elisp. I don't think it's that bad, but this is
+*Note:* I'm sorry for my bad elisp. I don't think it's that bad, but this is
 basicly the first thing I've ever built in elisp more than my .emacs-file, which
 depends alot on stackoverflow and other sources on internet.
 
