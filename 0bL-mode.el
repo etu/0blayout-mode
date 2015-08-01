@@ -62,6 +62,10 @@
 (defun 0bL-save-layout ()
   "This is a helper function to save the current layout."
 
+  ;; Remove all saves of current layout before saving
+  (setq 0bL-layout-alist (assq-delete-all 0bL-current-layout 0bL-layout-alist))
+
+  ;; Add current layout to list
   (add-to-list '0bL-layout-alist
                (cons 0bL-current-layout (current-window-configuration)))
 
