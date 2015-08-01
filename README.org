@@ -1,8 +1,11 @@
-
 * 0bL(ayout)-mode
 
 The plan with this mode is to create a different workflow when handling layouts,
 the intended workflow is planned to be based on 3 basic functions.
+
+*Note: * I'm sorry for my bad elisp. I don't think it's that bad, but this is
+basicly the first thing I've ever built in elisp more than my .emacs-file, which
+depends alot on stackoverflow and other sources on internet.
 
  1) Create new layout (C-c C-l C-c)
  2) Switch between layouts (C-c C-l C-b)
@@ -19,7 +22,6 @@ Used to switch between layouts.
 ** Kill layouts
 Kill the current layout, jump to next layout in list, if no next layout exist,
 set current-layout to "default" and jump to a fullscreen *scratch* buffer.
-
 
 * Links
 May be worth looking at this: http://www.emacswiki.org/emacs/layout-restore.el
