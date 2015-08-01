@@ -41,18 +41,18 @@
 ;;;
 ;;; Function to switch layout
 ;;;
-(defun 0bL-switch-layout ()
+(defun 0bL-switch-layout (layout-name)
   "0bLayout switching function, default keybind for this function is C-c C-l C-b"
-  (interactive)
+  (interactive "sEnter name of layout to switch to: ")
 
   ;; Save the currently active layout
   (0bL-save-layout)
 
   ;; Load window configuration
-  (set-window-configuration (cdr (assoc "code" 0bL-layout-alist)))
+  (set-window-configuration (cdr (assoc layout-name 0bL-layout-alist)))
 
   ;; Save the name of the currently active layout
-  (setq 0bL-current-layout "code"))
+  (setq 0bL-current-layout layout-name))
 
 
 
