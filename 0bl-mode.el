@@ -1,5 +1,42 @@
 ;;; 0bl-mode.el --- Layout grouping with ease
 
+;; Copyright (c) 2015 Elis Axelsson
+
+;; Author: Elis "etu" Axelsson
+;; URL: https://github.com/etu/0bl-mode
+;; Version: 0.1
+
+;;; Commentary:
+
+;; The project is hosted at https://github.com/etu/0bl-mode
+;; The latest version, and all the relevant information can be found there.
+
+;;; License:
+
+;; This file is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this file; if not, write to the Free Software
+;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+;; 02110-1301, USA.
+
+;;; Usage
+
+;; Put this file in your Emacs lisp path (eg site-lisp) and add to this
+;; to your .emacs file:
+;;
+;; (require '0bl-mode)
+
+;;; Code:
+
 (defvar 0bl-layout-alist ()
   "List of the currently defined layouts.")
 (defvar 0bl-current-layout "default"
@@ -7,9 +44,7 @@
 
 
 
-;;;
-;;; Function to create a new layout
-;;;
+;; Function to create a new layout
 (defun 0bl-new-layout (layout-name)
   "0blayout creating function, default keybind for this function is C-c C-l C-c"
   (interactive "sEnter name of new layout: ")
@@ -27,9 +62,7 @@
 
 
 
-;;;
-;;; Function to kill current layout
-;;;
+;; Function to kill current layout
 (defun 0bl-kill-layout ()
   "0blayout removal function, default keybind for this function is C-c C-l C-k"
   (interactive)
@@ -47,9 +80,7 @@
 
 
 
-;;;
-;;; Function to switch layout
-;;;
+;; Function to switch layout
 (defun 0bl-switch-layout (layout-name)
   "0blayout switching function, default keybind for this function is C-c C-l C-b"
   (interactive "sEnter name of layout to switch to: ")
@@ -71,9 +102,7 @@
 
 
 
-;;;
-;;; Function to save layout
-;;;
+;; Function to save layout
 (defun 0bl-save-layout ()
   "This is a helper function to save the current layout."
 
