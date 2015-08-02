@@ -16,6 +16,11 @@ You can also kill the layout that you're currently visiting with ~C-c C-l C-k~.
 basicly the first thing I've ever built in elisp more than my .emacs-file, which
 depends alot on stackoverflow and other sources on internet.
 
+** TODO
+ - Add name of current layout to the mode-line
+ - Tab completions of layouts available when switching layout
+ - Kill other layouts than the one you're visiting, also with tab-completions
+
 ** Why the name?
 0b is just a prefix I use for things because I have the domain 0b.se, and
 lowercase L as in "Layout", that's it basicly.
