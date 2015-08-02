@@ -34,6 +34,7 @@
 ;; to your .emacs file:
 ;;
 ;; (require '0bl-mode)
+;; (0bl-mode)
 
 ;;; Code:
 
