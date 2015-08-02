@@ -76,8 +76,16 @@
 
   ;; Switch to next layout in the list
   (let ((new-layout (car (car 0bl-layout-alist))))
-    (set-window-configuration (cdr (car 0bl-layout-alist)))
-    (setq 0bl-current-layout (symbol-name new-layout))))
+    (if (eq new-layout nil)
+        ;; If there's no other layout, make a new default layout
+        (progn
+          (setq 0bl-current-layout "default")
+          (0bl-new-layout "default"))
+
+      ;; Switch to some other saved layout
+      (progn
+        (set-window-configuration (cdr (car 0bl-layout-alist)))
+        (setq 0bl-current-layout (symbol-name new-layout))))))
 
 
 
