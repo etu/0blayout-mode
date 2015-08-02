@@ -20,6 +20,8 @@ depends alot on stackoverflow and other sources on internet.
  - Add name of current layout to the mode-line
  - Tab completions of layouts available when switching layout
  - Kill other layouts than the one you're visiting, also with tab-completions
+ - Remove the ~C-c C-l C-c~ (create new layout) command and just support switch
+to a undefined buffer to create a new one.
 
 ** Why the name?
 0b is just a prefix I use for things because I have the domain 0b.se, and
