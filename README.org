@@ -1,4 +1,4 @@
-* 0bl-mode
+* 0blayout -- Small Layout Management mode
 
 This mode provides the ability to have several layouts saved and then you can
 easily switch between your saved layouts. When you first load the mode, you will
@@ -23,5 +23,4 @@ depends alot on stackoverflow and other sources on internet.
  - Remove the ~C-c C-l C-c~ (create new layout) command and just support switch to a undefined buffer to create a new one.
 
 ** Why the name?
-0b is just a prefix I use for things because I have the domain 0b.se, and
-lowercase L as in "Layout", that's it basicly.
+0b is just a prefix I use for things because I have the domain 0b.se, that's it.
