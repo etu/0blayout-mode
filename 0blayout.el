@@ -5,11 +5,26 @@
 ;; Author: Elis "etu" Axelsson
 ;; URL: https://github.com/etu/0blayout
 ;; Version: 0.1
+;; Keywords: convenience, window-management
 
 ;;; Commentary:
 
+;; This global minor mode provides a simple way to switch between layouts and
+;; the buffers you left open before you switched (unless you closed it).
+
+;; It doesn't require any setup at all more than:
+;; (0blayout)
+
+;; When you start emacs with 0blayout loaded, you will have a default layout
+;; named "default", and then you can create new layouts (C-c C-l C-c), switch
+;; layouts (C-c C-l C-b), and kill the current layout (C-c C-l C-k).
+
+;; You can also customize-variable to change the name of the default session.
+
 ;; The project is hosted at https://github.com/etu/0blayout
-;; The latest version, and all the relevant information can be found there.
+;; There you can leave bug-reports and suggestions.
+
+;; Another comparable mode is eyebrowse which have been developed for longer.
 
 ;;; License:
 
@@ -27,14 +42,6 @@
 ;; along with this file; if not, write to the Free Software
 ;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 ;; 02110-1301, USA.
-
-;;; Usage
-
-;; Put this file in your Emacs lisp path (eg site-lisp) and add to this
-;; to your .emacs file:
-;;
-;; (require '0blayout)
-;; (0blayout)
 
 ;;; Code:
 
