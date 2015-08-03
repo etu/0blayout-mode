@@ -1,4 +1,4 @@
-* 0blayout -- Small Layout Management mode
+* 0blayout-mode -- Small Layout Management mode
 
 This mode provides the ability to have several layouts saved and then you can
 easily switch between your saved layouts. When you first load the mode, you will
