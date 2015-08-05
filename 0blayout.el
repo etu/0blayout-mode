@@ -63,7 +63,7 @@
   ;; Then we just delete all other windows and switch to a *scratch* buffer,
   ;; then it's up to the user to set up their layout.
   (delete-other-windows)
-  (find-file "*scratch*")
+  (switch-to-buffer "*scratch*")
 
   ;; Save the name of the new current layout
   (setq 0blayout-current layout-name))
@@ -99,7 +99,9 @@
 ;; Function to switch layout
 (defun 0blayout-switch (layout-name)
   "0blayout switching function, default keybind for this function is C-c C-l C-b"
-  (interactive "sEnter name of layout to switch to: ")
+  (interactive
+   (list
+    (completing-read "Layout to switch to: " 0blayout-alist)))
 
   ;; Save the currently active layout
   (0blayout-save)
