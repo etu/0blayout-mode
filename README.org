@@ -18,10 +18,42 @@ You can also kill the layout that you're currently visiting with ~C-c C-l C-k~.
 basicly the first thing I've ever built in elisp more than my .emacs-file, which
 depends alot on stackoverflow and other sources on internet.
 
+** Install
+*** Using MELPA
+ - Follow the guide here http://melpa.org/#/getting-started to add MELPA Repos.
+ - Then you can install ~0blayout~ from MELPA in ~package-list-packages~
+
+You could also have a clause like this to automaticly install it:
+#+BEGIN_SRC elisp
+(unless (package-installed-p '0blayout)
+  (progn
+    (package-refresh-contents)
+    (package-install '0blayout)))
+#+END_SRC
+
+To activate ~0blayout-mode~ you just put ~(0blayout-mode 1)~ somewhere after you
+loaded it.
+
+
+*** Manual install
+ - Download ~0blayout.el~
+ - Put the file in some folder like ~$HOME/.emacs.d/lisp/~
+
+Then you can include like this:
+#+BEGIN_SRC elisp
+(add-to-list 'load-path
+             (expand-file-name "lisp" user-emacs-directory))
+
+(require '0blayout)
+
+(0blayout-mode 1)                       ; Activate 0blayout-mode
+#+END_SRC
+
+
 ** Things to do
  - Add name of current layout to the mode-line
  - Kill other layouts than the one you're visiting, also with tab-completions
  - Remove the ~C-c C-l C-c~ (create new layout) command and just support switch to a undefined buffer to create a new one.
 
-** Why the name?
+** Name
 0b is just a prefix I use for things because I have the domain 0b.se, that's it.
