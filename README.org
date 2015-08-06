@@ -1,3 +1,5 @@
+[[http://melpa.org/#/0blayout][file:http://melpa.org/packages/0blayout-badge.svg]]
+
 * 0blayout-mode -- Small Layout Management mode
 
 This mode provides the ability to have several layouts saved and then you can
@@ -18,7 +20,6 @@ depends alot on stackoverflow and other sources on internet.
 
 ** Things to do
  - Add name of current layout to the mode-line
- - Tab completions of layouts available when switching layout
  - Kill other layouts than the one you're visiting, also with tab-completions
  - Remove the ~C-c C-l C-c~ (create new layout) command and just support switch to a undefined buffer to create a new one.
 
