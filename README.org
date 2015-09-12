@@ -1,22 +1,26 @@
 [[http://melpa.org/#/0blayout][file:http://melpa.org/packages/0blayout-badge.svg]]
 
 * 0blayout-mode -- Small Layout Management mode
-
 This mode provides the ability to have several layouts saved and then you can
 easily switch between your saved layouts. When you first load the mode, you will
 get a "default" layout named "default".
 
-Then you have the ability to create new layouts ~C-c C-l C-c~ and name them.
-There you can set up your layout as you want it, open buffers, do stuff.
+** Default Prefix
+Default keyboard prefix is ~C-c C-l~, and you can modify that by putting this
+in your init-file (with your own prefix of course):
+
+#+BEGIN_SRC elisp
+(0blayout-add-keybindings-with-prefix "C-c C-l")
+#+END_SRC
+
+** Usage
+You have the ability to create new layouts using ~PREFIX C-c~ and name them.
+There you can set up your layout as you want it, open buffers, edit files.
 
 And when you have more than one layout, you can switch between the layouts you
-have active with ~C-c C-l C-b~.
+have active with ~PREFIX C-b~.
 
-You can also kill the layout that you're currently visiting with ~C-c C-l C-k~.
-
-*Note:* I'm sorry for my bad elisp. I don't think it's that bad, but this is
-basicly the first thing I've ever built in elisp more than my .emacs-file, which
-depends alot on stackoverflow and other sources on internet.
+You can also kill the layout that you're currently visiting with ~PREFIX C-k~.
 
 ** Install
 *** Using MELPA
@@ -34,7 +38,6 @@ You could also have a clause like this to automaticly install it:
 To activate ~0blayout-mode~ you just put ~(0blayout-mode 1)~ somewhere after you
 loaded it.
 
-
 *** Manual install
  - Download ~0blayout.el~
  - Put the file in some folder like ~$HOME/.emacs.d/lisp/~
@@ -48,7 +51,6 @@ Then you can include like this:
 
 (0blayout-mode 1)                       ; Activate 0blayout-mode
 #+END_SRC
-
 
 ** Things to do
  - Add name of current layout to the mode-line
