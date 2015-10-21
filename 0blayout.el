@@ -4,7 +4,7 @@
 
 ;; Author: Elis "etu" Axelsson
 ;; URL: https://github.com/etu/0blayout
-;; Package-Version: 20150806.4
+;; Package-Version: 20151021.0
 ;; Version: 0.1
 ;; Keywords: convenience, window-management
 
@@ -16,7 +16,7 @@
 ;; It doesn't require any setup at all more than:
 ;; (0blayout-mode)
 
-;; When you start emacs with 0blayout loaded, you will have a default layout
+;; When you start Emacs with 0blayout loaded, you will have a default layout
 ;; named "default", and then you can create new layouts (<prefix> C-c), switch
 ;; layouts (C-c C-l C-b), and kill the current layout (<prefix> C-k).
 ;; The default <prefix> is (C-c C-l), but you can change it using:
@@ -51,7 +51,7 @@
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
 (defvar 0blayout-current "default"
-  "Currently active layout")
+  "Currently active layout.")
 
 (defvar 0blayout-keys-map '(("C-c" . 0blayout-new)
                             ("C-k" . 0blayout-kill)
@@ -63,7 +63,8 @@
 
 ;; Function to create a new layout
 (defun 0blayout-new (layout-name)
-  "0blayout creating function."
+  "0blayout creating function.
+Argument LAYOUT-NAME Name of the layout."
   (interactive "sEnter name of new layout: ")
 
   ;; Save the currently active layout
@@ -107,7 +108,8 @@
 
 ;; Function to switch layout
 (defun 0blayout-switch (layout-name)
-  "0blayout switching function."
+  "0blayout switching function.
+Argument LAYOUT-NAME Name of the layout."
   (interactive
    (list
     (completing-read "Layout to switch to: " 0blayout-alist)))
@@ -146,7 +148,7 @@
 
 ;;;###autoload
 (defun 0blayout-add-keybindings-with-prefix (prefix)
-  "Add 0blayout keybindings using the prefix PREFIX"
+  "Add 0blayout keybindings using the prefix PREFIX."
   (setf (cdr 0blayout-mode-map) nil)
   (dolist (pair 0blayout-keys-map)
     (define-key 0blayout-mode-map
