@@ -5,7 +5,7 @@
 ;; Author: Elis "etu" Axelsson
 ;; URL: https://github.com/etu/0blayout
 ;; Package-Version: 20151021.0
-;; Version: 0.1
+;; Version: 1.0.0
 ;; Keywords: convenience, window-management
 
 ;;; Commentary:
@@ -18,7 +18,7 @@
 
 ;; When you start Emacs with 0blayout loaded, you will have a default layout
 ;; named "default", and then you can create new layouts (<prefix> C-c), switch
-;; layouts (C-c C-l C-b), and kill the current layout (<prefix> C-k).
+;; layouts (<prefix> C-b), and kill the current layout (<prefix> C-k).
 ;; The default <prefix> is (C-c C-l), but you can change it using:
 ;; (0blayout-add-keybindings-with-prefix "<your prefix>")
 
