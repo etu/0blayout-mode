@@ -1,4 +1,5 @@
 [[http://melpa.org/#/0blayout][file:http://melpa.org/packages/0blayout-badge.svg]]
+[[https://stable.melpa.org/#/0blayout][file:https://stable.melpa.org/packages/0blayout-badge.svg]]
 
 * 0blayout-mode -- Small Layout Management mode
 This mode provides the ability to have several layouts saved and then you can
