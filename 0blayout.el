@@ -50,6 +50,8 @@
 
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
+(defvar 0blayout-default "default"
+  "Name of default layout used")
 (defvar 0blayout-current "default"
   "Currently active layout.")
 
@@ -96,8 +98,8 @@ Argument LAYOUT-NAME Name of the layout."
     (if (eq new-layout nil)
         ;; If there's no other layout, make a new default layout
         (progn
-          (setq 0blayout-current "default")
-          (0blayout-new "default"))
+          (setq 0blayout-current 0blayout-default)
+          (0blayout-new 0blayout-default))
 
       ;; Switch to some other saved layout
       (progn
