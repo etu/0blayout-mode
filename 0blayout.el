@@ -78,7 +78,7 @@ Argument LAYOUT-NAME Name of the layout."
   (switch-to-buffer "*scratch*")
 
   ;; Save the name of the new current layout
-  (setq 0blayout-current layout-name))
+  (0blayout-set-current layout-name))
 
 
 
@@ -87,24 +87,24 @@ Argument LAYOUT-NAME Name of the layout."
   "0blayout removal function."
   (interactive)
 
-  (message "Killing layout: '%s'" 0blayout-current)
+  (message "Killing layout: '%s'" (0blayout-get-current))
 
   ;; Remove current layout from known layouts
   (setq 0blayout-alist
-        (assq-delete-all (intern 0blayout-current) 0blayout-alist))
+        (assq-delete-all (intern (0blayout-get-current)) 0blayout-alist))
 
   ;; Switch to next layout in the list
   (let ((new-layout (car (car 0blayout-alist))))
     (if (eq new-layout nil)
         ;; If there's no other layout, make a new default layout
         (progn
-          (setq 0blayout-current 0blayout-default)
+          (0blayout-set-current 0blayout-default)
           (0blayout-new 0blayout-default))
 
       ;; Switch to some other saved layout
       (progn
         (set-window-configuration (cdr (car 0blayout-alist)))
-        (setq 0blayout-current (symbol-name new-layout))))))
+        (0blayout-set-current (symbol-name new-layout))))))
 
 
 
@@ -127,7 +127,7 @@ Argument LAYOUT-NAME Name of the layout."
         (set-window-configuration (cdr layout))
 
         ;; Save the name of the currently active layout
-        (setq 0blayout-current layout-name)
+        (0blayout-set-current layout-name)
 
         (message "Switch to layout: '%s'" layout-name)))))
 
@@ -140,13 +140,33 @@ Argument LAYOUT-NAME Name of the layout."
   ;; Remove all saves of current layout before saving
   (setq 0blayout-alist
         (assq-delete-all
-         (intern 0blayout-current) 0blayout-alist))
+         (intern (0blayout-get-current)) 0blayout-alist))
 
   ;; Add current layout to list
   (add-to-list '0blayout-alist
-               (cons (intern 0blayout-current) (current-window-configuration)))
+               (cons (intern (0blayout-get-current))
+                     (current-window-configuration)))
 
-  (message "Saved the currently active layout: %s" 0blayout-current))
+  (message "Saved the currently active layout: %s" (0blayout-get-current)))
+
+
+
+;; Save current layout
+(defun 0blayout-set-current (layout-name)
+  "Helper function to store layout name"
+
+  (setq 0blayout-current layout-name))
+
+
+
+;; Get current layout
+(defun 0blayout-get-current ()
+  "Helper function to get layout name"
+
+  0blayout-current)
+
+
+
 
 ;;;###autoload
 (defun 0blayout-add-keybindings-with-prefix (prefix)
