@@ -52,8 +52,6 @@
   "List of the currently defined layouts.")
 (defvar 0blayout-default "default"
   "Name of default layout used")
-(defvar 0blayout-current "default"
-  "Currently active layout.")
 
 (defvar 0blayout-keys-map '(("C-c" . 0blayout-new)
                             ("C-k" . 0blayout-kill)
@@ -155,7 +153,7 @@ Argument LAYOUT-NAME Name of the layout."
 (defun 0blayout-set-current (layout-name)
   "Helper function to store layout name"
 
-  (setq 0blayout-current layout-name))
+  (set-frame-parameter nil '0blayout-current layout-name))
 
 
 
@@ -163,7 +161,7 @@ Argument LAYOUT-NAME Name of the layout."
 (defun 0blayout-get-current ()
   "Helper function to get layout name"
 
-  0blayout-current)
+  (frame-parameter nil '0blayout-current))
 
 
 
@@ -178,6 +176,14 @@ Argument LAYOUT-NAME Name of the layout."
       (cdr pair))))
 
 (0blayout-add-keybindings-with-prefix "C-c C-l")
+
+
+
+;;;###autoload
+(add-to-list 'default-frame-alist (cons '0blayout-current 0blayout-default))
+(set-frame-parameter nil '0blayout-current 0blayout-default)
+
+
 
 ;;;###autoload
 (define-minor-mode 0blayout-mode
