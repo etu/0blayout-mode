@@ -51,7 +51,6 @@
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
 
-;;;###autoload
 (defvar 0blayout-default "default"
   "Name of default layout used")
 
@@ -159,7 +158,14 @@ Argument LAYOUT-NAME Name of the layout."
 (defun 0blayout-get-current ()
   "Helper function to get layout name"
 
-  (frame-parameter nil '0blayout-current))
+  ;; Get variable from current frame
+  (let ((current-layout (frame-parameter nil '0blayout-current)))
+    ;; Check if it's nil
+    (if (eq current-layout nil)
+        ;; If so, return default value
+        0blayout-default
+      ;; else return current value
+      current-layout)))
 
 
 ;;;###autoload
@@ -172,14 +178,6 @@ Argument LAYOUT-NAME Name of the layout."
       (cdr pair))))
 
 (0blayout-add-keybindings-with-prefix "C-c C-l")
-
-
-;;;###autoload
-(add-to-list 'default-frame-alist (cons '0blayout-current 0blayout-default))
-
-
-;;;###autoload
-(set-frame-parameter nil '0blayout-current 0blayout-default)
 
 
 ;;;###autoload
