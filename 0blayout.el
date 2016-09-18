@@ -1,10 +1,10 @@
 ;;; 0blayout.el --- Layout grouping with ease
 
-;; Copyright (c) 2015 Elis Axelsson
+;; Copyright (c) 2015-2016 Elis Axelsson
 
 ;; Author: Elis "etu" Axelsson
 ;; URL: https://github.com/etu/0blayout
-;; Package-Version: 20151021.0
+;; Package-Version: 20160918.0
 ;; Version: 1.0.0
 ;; Keywords: convenience, window-management
 
