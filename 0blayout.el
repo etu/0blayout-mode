@@ -52,7 +52,7 @@
   "List of the currently defined layouts.")
 
 (defvar 0blayout-default "default"
-  "Name of default layout used")
+  "Name of default layout used.")
 
 (defvar 0blayout-keys-map '(("C-c" . 0blayout-new)
                             ("C-k" . 0blayout-kill)
@@ -149,14 +149,14 @@ Argument LAYOUT-NAME Name of the layout."
 
 ;; Save current layout name
 (defun 0blayout-set-current-name (layout-name)
-  "Helper function to store layout name"
+  "Helper function to store current LAYOUT-NAME for this frame."
 
   (set-frame-parameter nil '0blayout-current layout-name))
 
 
 ;; Get current layout name
 (defun 0blayout-get-current-name ()
-  "Helper function to get layout name"
+  "Helper function to get current LAYOUT-NAME for this frame."
 
   ;; Get variable from current frame
   (let ((current-layout (frame-parameter nil '0blayout-current)))
