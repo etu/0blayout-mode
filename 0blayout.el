@@ -50,6 +50,8 @@
 
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
+
+;;;###autoload
 (defvar 0blayout-default "default"
   "Name of default layout used")
 
@@ -181,8 +183,10 @@ Argument LAYOUT-NAME Name of the layout."
 
 ;;;###autoload
 (add-to-list 'default-frame-alist (cons '0blayout-current 0blayout-default))
-(set-frame-parameter nil '0blayout-current 0blayout-default)
 
+
+;;;###autoload
+(set-frame-parameter nil '0blayout-current 0blayout-default)
 
 
 ;;;###autoload
