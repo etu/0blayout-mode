@@ -31,12 +31,12 @@ easiest way to set up packages.
 #+BEGIN_SRC emacs-lisp
   (use-package 0blayout
     :ensure t
-    :config (progn
-              ;; Optionally set default layout name
-              (setq-default 0blayout-default "my-default-layout-name")
 
-              ;; Load the mode
-              (0blayout-mode t)))
+    ;; Optionally set default layout name
+    :init (setq-default 0blayout-default "my-default-layout-name")
+
+    ;; Load the mode
+    :config (0blayout-mode t))
 #+END_SRC
 
 *** Using MELPA
