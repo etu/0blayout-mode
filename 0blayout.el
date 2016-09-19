@@ -51,8 +51,9 @@
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
 
-(defvar 0blayout-default "default"
-  "Name of default layout used.")
+(defcustom 0blayout-default "default"
+  "Name of default layout used."
+  :group '0blayout)
 
 (defvar 0blayout-keys-map '(("C-c" . 0blayout-new)
                             ("C-k" . 0blayout-kill)
