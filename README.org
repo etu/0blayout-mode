@@ -24,6 +24,21 @@ you have active with ~PREFIX C-b~.
 You can also kill the layout that you're currently visiting with ~PREFIX C-k~
 
 ** Install
+*** The lazy way (Using [[https://github.com/jwiegley/use-package][use-package]])
+This requires that you have [[https://github.com/jwiegley/use-package][use-package]] set up. But it's in my opinion the
+easiest way to set up packages.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package 0blayout
+    :ensure t
+    :config (progn
+              ;; Optionally set default layout name
+              (setq-default 0blayout-default "my-default-layout-name")
+
+              ;; Load the mode
+              (0blayout-mode t)))
+#+END_SRC
+
 *** Using MELPA
  - Follow the guide here http://melpa.org/#/getting-started to add MELPA
  - Then you can install ~0blayout~ from MELPA in ~package-list-packages~
