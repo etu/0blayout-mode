@@ -48,6 +48,9 @@
 
 ;;; Code:
 
+(defgroup 0blayout nil
+  "Configuration settings for 0blayout-mode.")
+
 (defvar 0blayout-alist ()
   "List of the currently defined layouts.")
 
