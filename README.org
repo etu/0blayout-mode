@@ -1,4 +1,4 @@
-[[http://melpa.org/#/0blayout][file:http://melpa.org/packages/0blayout-badge.svg]]
+[[https://melpa.org/#/0blayout][file:https://melpa.org/packages/0blayout-badge.svg]]
 [[https://stable.melpa.org/#/0blayout][file:https://stable.melpa.org/packages/0blayout-badge.svg]]
 
 * 0blayout-mode -- Small Layout Management mode
