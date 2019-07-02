@@ -57,6 +57,7 @@
 
 (defcustom 0blayout-default "default"
   "Name of default layout used."
+  :type 'string
   :group '0blayout)
 
 (defvar 0blayout-keys-map '(("C-c" . 0blayout-new)
